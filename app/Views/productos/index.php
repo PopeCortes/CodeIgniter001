@@ -3,20 +3,26 @@
 
 echo $this->section('contenido');
 ?>
-<table>
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Precio</th>
+            <th scope="col">#</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Stock</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Shampoo</td>
-            <td>$52</td>
+
+        <?php foreach ($productos as $producto) : ?>
+            <tr>
+            <th scope="row"><?php echo $producto->id;?></th>
+            <th scope="row"><?php echo $producto->codigo;?></th>
+            <th scope="row"><?php echo $producto->nombre;?></th>
+            <th scope="row"><?php echo $producto->stock;?></th>
         </tr>
+        <?php endforeach; ?>
+
     </tbody>
 </table>
 
