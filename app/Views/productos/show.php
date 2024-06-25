@@ -3,12 +3,8 @@
 
 
 <?php echo $this->section('contenido') ?>
-<h2>Detalles del producto <?php echo $id ?></h2>
+
+<h2>Detalles del producto <?php echo $producto->nombre ?></h2>
+
 <?php echo $this->endSection(); ?>
 
-
-<?php echo $this->section('scripts') ?>
-<script>
-    alert("Hola, show");
-</script>
-<?php echo $this->endSection(); ?>

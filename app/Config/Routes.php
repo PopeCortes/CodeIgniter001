@@ -14,7 +14,9 @@ $routes->get('/productos', 'Productos::index');
 // $routes->get('/productos/(:num)', 'Productos::show/$1');
 
 // Permite mandar solo numeros pero solo dos, por las llaves le pones cuantos parametros o numeros son en total
-$routes->get('/productos/([0-9]{2})', 'Productos::show/$1');
+// $routes->get('/productos/([0-9]{2})', 'Productos::show/$1');
+$routes->get('/productos/(:num)', 'Productos::show/$1');
+$routes->get('/productos/transaccion', 'Productos::transaccion');
 
 // Permite mandar solo letras y depues números
 $routes->get('/productos/(:alpha)/(:num)', 'Productos::cat/$1/$2');
