@@ -25,6 +25,6 @@ echo $this->section('contenido');
 
 <?php echo $this->section('scripts'); ?>
 <script>
-    console.log("Hola");
+    alert("Hola");
 </script>
 <?php echo $this->endSection(); ?>
