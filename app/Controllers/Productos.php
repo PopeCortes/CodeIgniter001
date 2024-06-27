@@ -22,7 +22,10 @@ class Productos extends BaseController
         // $result = $this->ProductoModel->withDeleted()->findAll();
         
         //! Para mostrar solo los datos eliminados
-        $result = $this->ProductoModel->onlyDeleted()->findAll();
+        // $result = $this->ProductoModel->onlyDeleted()->findAll();
+        
+        //! Pra mostrar solo los que tienen el statys 1
+        $result = $this->ProductoModel->where('estatus', 1)->findAll();
         
         
         // Preparar los datos para la vista
@@ -45,20 +48,18 @@ class Productos extends BaseController
     {
         // Datos de ejemplo para la inserción
         $data = [
-            'codigo' => '0I90D-F489',
-            'nombre' => 'Porducto de prueba',
-            'stock' => 10,
-            'estatus' => 1,
-            'id_almacen' => 1,
+            'estatus' => 0,
         ];
 
         // Insertar los datos en la base de datos
-        // echo $this->ProductoModel->update(9, $data, false);
         // echo $this->ProductoModel->insert($data, false);
+        //! Actualización desde la base de datos
+        // echo $this->ProductoModel->update([1, 9], $data, false);
+        //! Eliminar por encima de la base de datos
         // echo $this->ProductoModel->delete(10);
         //! Para ahora si eliminar los datos eliminados
-        echo $this->ProductoModel->purgeDeleted();
-        // Va a mostrar el id insertado 
+        // echo $this->ProductoModel->purgeDeleted();
+        //! Va a mostrar el id insertado 
         // echo $this->ProductoModel->getInsertID();
 
 
