@@ -8,6 +8,7 @@
 
 ### Mostrar
 
+<<<<<<< HEAD
 #### ¤¤¤ $builder->from() ¤¤¤
 
 
@@ -44,4 +45,25 @@ $query = $builder->get();
  * SELECT * FROM blogs JOIN comments ON comments.id = blogs.id
  */
 ```
+=======
+```php
+$builder = $db->table('users');
+$builder->select('title, content, date');
+$builder->from('mytable');
+$query = $builder->get();
+// Produces: SELECT title, content, date FROM users, mytable
+```
+
+### Inner
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 539281c3d4b184f0b05884f50bd6301d2ceb5084
 
