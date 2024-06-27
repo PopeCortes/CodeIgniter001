@@ -15,9 +15,16 @@ class Productos extends BaseController
 
     public function index()
     {
-        // Obtener todos los productos
-        $result = $this->ProductoModel->findAll();
-
+        //! Obtener todos los productos
+        // $result = $this->ProductoModel->findAll();
+        
+        //! Para mostrar todos los datos hasta los "Eliminados"
+        // $result = $this->ProductoModel->withDeleted()->findAll();
+        
+        //! Para mostrar solo los datos eliminados
+        $result = $this->ProductoModel->onlyDeleted()->findAll();
+        
+        
         // Preparar los datos para la vista
         $data = ['title' => 'Catálogo de productos', 'productos' => $result];
         return view('productos/index', $data);
@@ -38,17 +45,19 @@ class Productos extends BaseController
     {
         // Datos de ejemplo para la inserción
         $data = [
-            'codigo' => 'D0D9-D93',
-            'nombre' => 'Nomas',
+            'codigo' => '0I90D-F489',
+            'nombre' => 'Porducto de prueba',
             'stock' => 10,
             'estatus' => 1,
             'id_almacen' => 1,
         ];
 
         // Insertar los datos en la base de datos
-        // echo $this->ProductoModel->update(5, $data, false);
-        echo $this->ProductoModel->insert($data);
-        // echo $this->ProductoModel->delete(5);
+        // echo $this->ProductoModel->update(9, $data, false);
+        // echo $this->ProductoModel->insert($data, false);
+        // echo $this->ProductoModel->delete(10);
+        //! Para ahora si eliminar los datos eliminados
+        echo $this->ProductoModel->purgeDeleted();
         // Va a mostrar el id insertado 
         // echo $this->ProductoModel->getInsertID();
 

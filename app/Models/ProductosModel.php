@@ -30,7 +30,7 @@ class ProductosModel extends Model
     // protected bool $updateOnlyChanged = true; // Actualiza solo los campos que han cambiado
 
     // Dates
-    protected $useTtimestamps = true; // Deshabilita el uso automático de timestamps
+    protected $useTimestamps = true; // Deshabilita el uso automático de timestamps
     protected $dateFormat    = 'datetime'; // Formato de fecha usado
     protected $createdField  = 'fecha_alta'; // Campo para la fecha de creación
     protected $updatedField  = 'fecha_modifica'; // Campo para la fecha de actualización
