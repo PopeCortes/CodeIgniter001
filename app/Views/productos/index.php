@@ -26,6 +26,7 @@ echo $this->section('contenido');
     </tbody>
 </table>
 
+<!-- Hola pepe como estas? -->
 
 <?php echo $this->endSection(); ?>
 
