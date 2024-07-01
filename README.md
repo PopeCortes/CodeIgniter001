@@ -170,7 +170,7 @@ class Productos extends BaseController
     public function index()
     {
         //! Obtener todos los productos
-        // $result = $this->ProductoModel->findAll();
+        $result = $this->ProductoModel->findAll();
 
         // Preparar los datos para la vista
         $data = ['title' => 'Catálogo de productos', 'productos' => $result];

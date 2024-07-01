@@ -4,8 +4,16 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return view('welcome_message');
+        $migrate = \Config\Services::migrations();
+        $migrate->latest();
+
+        try {
+            // $migrate->latest();
+            $migrate->regress(0);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
     }
 }
